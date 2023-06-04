@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: mariadb:10
+    environment:
+      MYSQL_ROOT_PASSWORD: <ROOT_PASSWORD>
+      MYSQL_DATABASE: synology
+      MYSQL_USER: <USER>
+      MYSQL_PASSWORD: <USER_PASSWORD>
+    volumes:
+      - mariadb_vol:/var/lib/mysql:rw
+    ports:
+      - "5306:3306"
+
+volumes:
+  mariadb_vol:
